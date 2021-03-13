@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Load Calculator</title>
+    <script type="text/javascript" src="calculator.js"></script>
+    <!-- My addition of test file -->
+    <!-- <script type="text/javascript" src="calculator-test.js"></script> -->
+
+    <link rel="stylesheet" href="calculator.css">
+    <!-- My addition for jasmine installation -->
+    <!-- <link rel="shortcut icon" type="image/png" href="lib/jasmine-3.6.0/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="lib/jasmine-3.6.0/jasmine.css"> -->
+
+    <!-- Directly use online CDN version to use jasmine -->
+    <link rel="stylesheet"
+      href="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine.css" />
+   
+  </head>
+  <body>
+    <!-- My addition for jasmine installation -->
+    <!-- <script type="text/javascript" src="lib/jasmine-3.6.0/jasmine.js"></script>
+    <script type="text/javascript" src="lib/jasmine-3.6.0/jasmine-html.js"></script>
+    <script type="text/javascript" src="lib/jasmine-3.6.0/boot.js"></script> -->
+
+    <!-- Use online CDN version directly -->
+
+    <!-- Include js for jasmine -->
+    <script src="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+    <script src="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+    <script src="https://unpkg.com/jasmine-core/lib/jasmine-core/boot.js"></script>
+    
+    <!-- include your JS and test file here -->
+    <script src="calculator.js"></script>
+    <script src="calculator-test.js"></script>
+
+    <header>
+      <h1>Loan Calculator 💰💲💵</h1>
+    </header>
+    <section class="calc-container">
+      <form id="calc-form">
+        <label>
+          Loan Amount
+          <input type="text" id="loan-amount">
+        </label>
+        <label>
+          Term in Years
+          <input type="text" id="loan-years">
+        </label>
+        <label>
+          Yearly Rate
+          <input type="text" id="loan-rate">
+        </label>
+        <button type="submit" id="calc-submit">Calculate</button>
+      </form>
+      <div>
+        <h3>Monthly Payment<h3>
+        <span id="monthly-payment"></span>
+      </div>
+    </section>
+
+    <!-- My addition of source file for jasmine installation -->
+     <!-- include source files here... -->
+  <!-- <script src="src/calculator.js"></script> -->
+  <!-- <script src="src/calculator-test.js"></script> -->
+   
+  <!-- include spec files here... -->
+  <!-- <script src="spec/SpecHelper.js"></script>
+  <script src="spec/PlayerSpec.js"></script> -->
+  </body>
+</html>
+
+   
