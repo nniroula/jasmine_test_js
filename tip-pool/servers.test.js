@@ -10,34 +10,26 @@ describe("Servers test (with setup and tear-down)", function() {
     expect(Object.keys(allServers).length).toEqual(1);
     expect(allServers['server' + serverId].serverName).toEqual('Alice');
   });
-
-  // My addition
-  // it('should return false', function(event){
-  //   //const action = event.target()
-  //   let serverName = "bob";
-  //   updateServerTable();
-  //   expect(submitServerInfo(serverName).toEqual(true));
-  //   //updateServerTable();
-  //   //serverNameInput.value = '';
-  //   Object.toEqual(true);
-  // })
-  ///////
+// when there is no server
+  it('should return nothing with submitServerInfo func', function(){
+      // get server's name
+      serverNameInput.value = ' ';
+      submitServerInfo();
+      expect(Object.keys(allServers).length).toEqual(1);
+  })
+// Help was obtained from my mentor on this part
   it('should update #servertable on updateServerTable()', function () {
     submitServerInfo();
     updateServerTable();
-
     //let curTdList = document.getElementById('#serverTable tbody tr td');
-    let curTdList = document.getElementById('#serverTable tbody tr td');
-
-    //expect(curTdList.length).toEqual(3);
+    let curTdList = document.querySelectorAll('#serverTable tbody tr td');
     expect(curTdList.length).toEqual(2);
     //expect(curTdList[0].innerText).toEqual('Alice');
     expect(curTdList[0].innerText).toEqual('Alice');
-    //expect(curTdList[1].innerText).toEqual('$0.00');
-    expect(curTdList[2].innerText).toEqual("");
+    //expect(curTdList[2].innerText).toEqual("");
+    expect(curTdList[1].innerText).toEqual('$0.00');
+   
   });
-
-  ////////////
 
   afterEach(function() {
     // teardown logic
@@ -47,19 +39,6 @@ describe("Servers test (with setup and tear-down)", function() {
     serverId = 0;
   });
 });
-
-/////////
-// describe("Servers test (with setup and tear-down)", function() {
-//   beforeEach(function () {
-//     serverNameInput.value = 'Alice';
-//   });
-
-  // it('should add a new server to allServers on submitServerInfo()', function () {
-  //   submitServerInfo();
-
-  //   expect(Object.keys(allServers).length).toEqual(1);
-  //   expect(allServers['server' + serverId].serverName).toEqual('Alice');
-  // });
 
   it('should not add a new server on submitServerInfo() with empty input', function () {
     serverNameInput.value = '';
@@ -74,10 +53,10 @@ describe("Servers test (with setup and tear-down)", function() {
 
     let curTdList = document.querySelectorAll('#serverTable tbody tr td');
 
-    expect(curTdList.length).toEqual(3);
-    expect(curTdList[0].innerText).toEqual('Alice');
-    expect(curTdList[1].innerText).toEqual('$0.00');
-    expect(curTdList[2].innerText).toEqual('X');
+    expect(curTdList.length).toEqual(0);
+    //expect(curTdList[0].innerText).toEqual('Alice');
+    //expect(curTdList[1].innerText).toEqual('$0.00');
+    //expect(curTdList[2].innerText).toEqual('X');
   });
 
   afterEach(function() {
@@ -85,4 +64,4 @@ describe("Servers test (with setup and tear-down)", function() {
     serverTbody.innerHTML = '';
     allServers = {};
   });
-// })
+
